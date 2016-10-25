@@ -20,5 +20,4 @@ def list_render():
     number = int(request.form['number'])
     list = range(0,number)
     return render_template('list.html', number=number, list=list) 
-    return redirect('/')
 
