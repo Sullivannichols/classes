@@ -10,6 +10,10 @@ app.config['TEMPLATES_AUTO_RELOAD']=True
 def homepage():
 	return '<h1>CSC211 HW7: Flask Assignment</h1>'
 
+@app.route('/list/')
+def message():
+    return 'Usage: Use /list/number in url, ie, /list/31'
+
 @app.route('/list/<int:number>')
 def list(number):
     list = range(0,number)
