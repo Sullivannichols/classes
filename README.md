@@ -1,2 +1,2 @@
-# csc404
-Repo for CSC404-Cyber Security class.
+## README
+Repo for all CSC classes.
