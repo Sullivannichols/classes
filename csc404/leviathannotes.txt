@@ -1,0 +1,105 @@
+Brandon Randle
+2016 September 19
+OtW: Leviathan Notes
+
+### LEVEL 0
+* Found /.backup/bookmarks.html in home directory.
+* Used `cat bookmarks.html | grep "password"` to find password
+* Password for leviathan1: rioGegei8m
+
+### LEVEL 1
+* Found ~/check in home directory.
+* Used `file check` to determine that check is an executable binary
+* Google searched for "how to decompile setuid ELF 32-bit LSB executable"
+* Accessed http://manoharvanga.com/hackme/
+* Tried `gdb ./check`, no debugging symbols found
+* Tried `strings check`, no helpful strings identified
+* Tried `ltrace ./check`, noticed the used of a strcmp function comparing input to a string
+* Tried `./check` and input said string -> success. A shell opened as leviathan2.
+* Used `cat /etc/leviathan_pass/leviathan2` to access password
+* Password for leviathan2: ougahZi8Ta
+
+### LEVEL 2
+* Found ~/printfile in home directory.
+* Used `file printfile` to determine that printfile is an executable binary, "not stripped"
+* Google searched for "gdb no debugging symbols found on a not stripped file"
+* Accessed http://stackoverflow.com/questions/21379424/not-stripped-but-no-debug-symbols
+* Google searched for "reading ls -la"
+* Accessed http://superuser.com/questions/945547/how-to-read-ls-l-permissions
+* Google searched for "s permission"
+* Accessed http://unix.stackexchange.com/questions/103376/what-does-the-s-mean-in-the-following-permission-rwsr-x
+* Accessed https://en.wikipedia.org/wiki/Setuid
+* Accessed man setuid
+* Google searched for "how to take advantage of setuid"
+* Accessed http://www.dankalia.com/tutor/01005/0100501004.htm
+* Created a symbolic link to the password file: `ln -s /etc/leviathan_pass/leviathan3 /tmp/bkr/test`
+* Attempted `./printfile /tmp/bkr/test`...no luck.
+* Attempted `ltrace ./printfile /tmp/bkr/test` and `strace ./printfile /tmp/bkr/test`
+* Google searched for "linux access() call"
+* Accessed https://linux.die.net/man/2/access
+* Created 'my file' in /tmp/bkr and attempted `ltrace ./printfile /tmp/bkr/my file`
+* ...spaces matter in linux...
+* Attempted `ltrace ./printfile /tmp/bkr/my\ file'
+* After `access` determines that the file is accessible, it passes the name to cat as an argument...but if the 
+  filename is space separated, it's submitted as two arguments.
+* Created /tmp/bkr/test\ file
+* Attempted `./printfile /tmp/bkr/test\ file'
+* Success. Password for leviathan3: Ahdiemoo1j
+
+### LEVEL 3
+* Found ~/level3 in home directory.
+* Used `file level3` to determine that level3 is in executable binary, not stripped
+* Used `ls -l` to determine file permissions
+* Used `./level3` to see what executing the file does...it asks for a password.
+* Used `ltrace ./level3`...program calls strcmp when password is entered, comparing to 'snlprintf'
+* Attempted `./level3` and used snlprintf as the password.
+* Shell access gained. Password for leviathan4: vuH0coox6m
+
+### LEVEL 4
+* Found ~/.trash/bin
+* Used `file`, `ls -l`, `./bin`, `strings bin`, `ltrace ./bin`, and `strace ./bin` to gather information.
+* Appears that `bin` prints the password for leviathan5 in binary 
+* Google searched for "linux how to convert binary string to text"
+* Accessed http://unix.stackexchange.com/questions/205635/convert-binary-mode-to-text-mode-and-the-reverse-option
+* Accessed man od, man xxd, and man bc
+* Accessed http://unix.stackexchange.com/questions/98948/ascii-binary-tools
+* Attempted `./bin | perl -lape '$_=pack"(B8)*",@F`
+* Success. Password for leviathan5: Tith4cokei
+
+### LEVEL 5
+* Found ~/leviathan5
+* Used `file`, `ls -l`, `./leviathan5`, `strings leviathan5`, `ltrace ./leviathan5`, and `strace ./leviathan5` to gather information.
+* `./leviathan5` looks for /tmp/file.log, but it doesn't exist.
+* Created /tmp/file.log
+* Used `ltrace ./leviathan5`; opens the file and unlinks it. 
+* Google searched for "linux unlink() call"
+* Accessed http://man7.org/linux/man-pages/man2/unlink.2.html
+* Google searched for "linux getuid() call"
+* Accessed https://www.linux.com/manpage/man2/getuid.2.html
+* Google searched for "linux setuid() call"
+* Accessed https://www.linux.com/manpage/man2/setuid.2.html
+* leviathan5 opens a file, gets the UID of the calling process, sets the UID of the calling process, then removes the file.
+* Google searched for "linux exploit a setuid call"
+* Accessed https://www.pentestpartners.com/blog/exploiting-suid-executables/
+* Created /tmp/file.log and filled it with a string, then used `ltrace ./leviathan5` again. The string was printed...
+* Created a symlink: `ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log` and used `./leviathan5` again.
+* Success. Password for leviathan6: UgaoFee4li
+
+### LEVEL 6
+* Found ~/leviathan 6
+* Gathered information as before.
+* leviathan6 asks for a four-digit argument, which, if correct, then presents the user with a shell using leviathan7's UID
+* Google searched for "linux atoi() call"
+* Accessed http://man7.org/linux/man-pages/man3/atoi.3.html
+* Google searched for "linux puts() call"
+* Accessed http://man7.org/linux/man-pages/man3/atoi.3.html 
+* Decided to bruteforce instead...
+* Password for leviathan7 is ahy7MaeBo9
+
+### LEVEL 7
+* Found ~/CONGRATULATIONS
+* Leviathan complete.
+
+
+
+ 

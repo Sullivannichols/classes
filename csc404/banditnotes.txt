@@ -1,0 +1,213 @@
+Brandon Randle
+2016 SEPT 06
+OtW:Bandit Notes
+
+### LEVEL 0
+* SSH'd into bandit.labs.overthewire.org.
+* Located password in readme
+* password for bandit1: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+### LEVEL 1
+* Located password in * file 
+* Google searched for "dashed filename"
+* password for bandit2: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+### LEVEL 2
+* Located password in spaces in this filename file
+* password for bandit3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+### LEVEL 3
+* Located password in ~/inhere/.hidden
+* password for bandit4: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+### LEVEL 4
+* Located password in ~/inhere/-file07
+* used `file` to identify file types and determine text file
+* password for bandit5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+### LEVEL 5
+* Located password in ~/maybehere07/.file2
+* Google searched for locating files based upon size
+* Found file using `find ./ -type f -readable -size 1033c`
+* password for bandit6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+### LEVEL 6
+* Located password in /var/lib/dpkg/info/bandit7.password
+* Google searched for "find files owned by a particular user/group"
+* Accessed http://www.cyberciti.biz/faq/how-do-i-find-all-the-files-owned-by-a-particular-user-or-group/
+* Google searched for "linux find with permissions"
+* Accessed www.tutonics.com/2012/12/find-files-based-on-their-permissions.html
+* Google searched for "bash how to omit permission denied with find"
+* Accessed stackoverflow.com/questions/762348/how-can-i-exclude-all-permission-denied-messages-from-find
+* Google searched for "use grep to hide permision denied"
+* Accessed askubuntu.com/questions/32112/grep-ignore-warnings
+
+* Found file using `find / -group bandit6 -user bandit7 -size 33c 2>/dev/null`
+* password for bandit7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+### LEVEL 7
+* Located password in data.txt
+* Found password using `cat data.txt | grep millionth`
+* password for bandit8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+### LEVEL 8
+* Located password in data.txt
+* Found password using `cat data.txt | sort | uniq -c | sort | less`
+* password for bandit9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+### LEVEL 9
+* Located password in data.txt
+* Accessed `man strings`
+* Found password using `cat data.txt | strings | grep ==`
+* password for bandit10: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+### LEVEL 10
+* Located password in data.txt
+* Accessed `man base64`
+* Found password using `base64 -d data.txt | less`
+* password for bandit11: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+### LEVEL 11
+* Located password in data.txt
+* Accessed Rot13 on Wikipedia
+* Accessed `man tr`
+* Found password using `cat data.txt | tr 'N-ZA-Mn-za-m' 'A-Za-z'`
+* password for bandit12: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+### LEVEL 12
+* Located password in data.txt...buried deep within...
+* Accessed Hex dump on Wikipedia
+* Accessed `man gzip`
+* Accessed `man tar`
+* Used `xxd -r mydata.txt newdata.txt` to revert the hex dump
+* Used `file newdata.txt` to identify file type
+* Used `mv newdata.txt newdata.gz` and then `gunzip newdata.gz` to decrompress
+* Used `file newdata` to identify file type
+* Used `mv newdata newdata.bz2` and then `bzip2 -d newdata.bz2` to decompress
+* Used `mv newdata newdata.tar` and `tar -xf newdata.tar` to decompress
+* ...rinse and repeat...
+* Realized that tar and bzip2 don't need file extensions, but gzip requires a file extension to run.
+* password for bandit13: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+### LEVEL 13
+* Located ssh key in sshkey.private
+* Accessed https://help.ubuntu.com/community/SSH/OpenSSH/Keys
+* Accessed `man ssh`
+* Google searched for "how to ssh with a ssh key"
+* Accessed support.rackspace.com/how-to/logging-in-with-an-ssh-private-key-on-linuxmac/
+* Used SSH key to access bandit 14: `ssh -i sshkey.private bandit14@localhost`
+
+### LEVEL 14
+* Located current level password in /etc/bandit_pass/bandit14
+* current level password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+* Connected to localhost: `telnet localhost 30000`
+* Sent current level password through telnet and received b15 password
+* password for bandit 15: BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+### LEVEL 15
+* Received password through ssl connection 
+* Accessed https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
+* Accessed `man openssl`
+* Connected to localhost: `openssl s_client -ign_eof -connect localhost:30001`
+* Sent current level password and received b16 password
+* password for bandit16: cluFn7wTiGryunymYOu4RcffSxQluehd 
+
+### LEVEL 16
+* Received password through ssl connection 
+* Accessed Port Scanner on Wikipedia
+* Accessed `man nmap`
+* Scanned ports on localhost: nmap -p31000-32000 localhost
+* Identified listening ports, then connected to each with openssl to identify one that would receive ssl
+* Connected with: `openssl s_client -ign_eof -connect localhost:31790`
+* Sent current level password and received b17 ssh private key
+* Used SSH key to access bandit17: ssh -i sshkey.private bandit17@bandit.labs.overthewire.org
+
+### LEVEL 17
+* Located password in passwords.new
+* Accessed `man diff`
+* Found password using `diff -y --suppress-common-lines passwords.old passwords.new`
+* password for bandit18: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+### LEVEL 18
+* Located password in readme
+* Accessed `man ssh`
+* Copied readme to local connection: `scp bandit18@bandit.labs.overthewire.org:/home/bandit18/readme ./tmp`
+* password for bandit19: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+### LEVEL 19
+* Located password in /etc/bandit_pass/bandit20
+* Accessed setuid on Wikipedia
+* Found password using `./bandit20-do less /etc/bandit_pass/bandit20
+* password for bandit20: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+### LEVEL 20
+* Received password from ./suconnect
+* Accessed `man nc`
+* Google searched for "bash how to start a network damon"
+* Accessed http://www.tutorialspoint.com/unix_commands/nc.htm
+* Started listening with `nc -l localhost 3500`
+* Connected with ./suconnect 3500
+* Sent password from nc terminal, received password back.
+* password for bandit21: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+### LEVEL 21
+* Located password in /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+* Accessed `man cron`
+* Checked /etc/cron.d directory
+* Examined cronjob_bandit22 to identify the job it was running
+* Examined the shell script the job ran with `less /usr/bin/cronjob_bandit22.sh`
+* Identified that the script was piping the `cat` output from the protected password file into a file in /tmp
+* password for bandit22: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+### LEVEL 22
+* Located password in /tmp/8ca319486bfbbc3663ea0fbe81326349 
+* Checked cron job and examined shell script
+* Figured out how shell script was creating the file name with `echo $(echo I am user bandit 23 | md5sum | cut -d ' ' -f 1)`
+* Accessed file with `less /tmp/8ca319486bfbbc3663ea0fbe81326349`
+* password for bandit23: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+### LEVEL 23
+* Located password in /etc/bandit_pass/bandit24
+* Checked cron job and examined shell script
+* Created script to copy password from /etc/bandit_pass/bandit24 to a /tmp directory
+* `cat /etc/bandit_pass/bandit24 > /tmp/buruf`
+* Copied script to /var/spool/bandit24 for execution
+* password for bandit 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 
+
+### LEVEL 24
+
+* Google searched for "how to brute force with a bash script"
+* Accessed http://stackoverflow.com/questions/12614318/shell-script-password-bruteforcing
+* Google searched for "how to use telnet with a bash script"
+* Accessed http://stackoverflow.com/questions/7013137/automating-telnet-session-using-bash-scripts
+* Google searched for "bash how to connect to an address and send a message"
+* Accessed http://stackoverflow.com/questions/25916542/script-that-open-telnet-connection-and-send-message-via-socket-to-a-server
+* Remembered pipes...
+* Switched to using nc instead of telnet
+* Created script to bruteforce: `for pin  in {0000..9999}; do { echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $pin"; } | nc localhost 30002 > log.txt done`
+* password for bandit25: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG 
+
+### LEVEL 25
+* 
+* Google searched for "how to see the default shell"
+* Accessed http://linuxdemon.blogspot.com/2012/09/how-to-find-default-shell-in-unix-or.html
+* Used `less /etc/passwd | grep bandit26` to identify the default shell
+* Identified /usr/bin/showtext as the default shell run
+* Used `less /usr/bin/showtext` to examine the default shell; it runs `sh` and uses the more command to display text and then exits the terminal
+* Accessed `man more`
+* Tried various ways to get more to hold up so the exit wasn't executed
+* Managed to get more to hold up by making the terminal window smaller, then used `v` hotkey as detailed in `man more` to enter vi
+* Google searched for "vi commands"
+* Accessed https://www.cs.rit.edu/~cslab/vi.html
+* Played around for a bit...couldn't figure out how to open a shell
+* Managed to access bandit26 password by using `:r` in vi to replace a line of text with the contents of the /etc/bandit_pass/bandit26 password file
+* Password isn't enough to get shell access...exploring how to change the shell from the vi editor
+* Google searched for "how to start a shell from vi" 
+* Accessed http://unix.stackexchange.com/questions/47793/bash-commands-inside-vi
+* Acessed `man vi`
+* Accessed https://www.linux.com/learn/vim-tips-working-external-commands
+* FOUND IT at above website towards the bottom: use `:set shell=/bin/bash` to change shell to bash, then run it with `:sh`
+* password for bandit26: 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+* This was a great assignment. =D
+
+
