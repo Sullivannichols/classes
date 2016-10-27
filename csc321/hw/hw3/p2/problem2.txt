@@ -1,0 +1,69 @@
+### PRE-SERVICE SNAPSHOT
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)    
+tcp4       0      0  192.168.178.47.62335   216.58.218.110.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.62334   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.62188   4.35.2.167.443         ESTABLISHED
+tcp4       0      0  192.168.178.47.60815   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60802   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60801   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60800   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.58142   192.30.253.125.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64658   192.241.190.55.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64522   173.194.78.188.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64502   17.249.60.27.5223      ESTABLISHED
+tcp4       0      0  127.0.0.1.4371         *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.4381         *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.4370         *.*                    LISTEN     
+tcp4       0      0  *.5555                 *.*                    LISTEN     
+tcp4       0      0  *.22                   *.*                    LISTEN     
+tcp6       0      0  *.22                   *.*                    LISTEN     
+
+### DURING SERVICE SNAPSHOT
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp4       0      0  127.0.0.1.5559         127.0.0.1.63947        ESTABLISHED  ### SERVICE ASSOCIATION
+tcp4       0      0  127.0.0.1.63947        127.0.0.1.5559         ESTABLISHED  ### SERVICE ASSOCIATION
+tcp4       0      0  127.0.0.1.5560         127.0.0.1.63384        ESTABLISHED  ### SERVICE ASSOCIATION
+tcp4       0      0  127.0.0.1.63384        127.0.0.1.5560         ESTABLISHED  ### SERVICE ASSOCIATION
+tcp4       0      0  *.5560                 *.*                    LISTEN       ### SERVICE ASSOCIATION
+tcp4       0      0  *.5559                 *.*                    LISTEN       ### SERVICE ASSOCIATION
+tcp4       0      0  192.168.178.47.60815   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60802   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60801   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60800   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.58142   192.30.253.125.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64658   192.241.190.55.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64522   173.194.78.188.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64502   17.249.60.27.5223      ESTABLISHED
+tcp4       0      0  127.0.0.1.4371         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4381         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4370         *.*                    LISTEN
+tcp4       0      0  *.5555                 *.*                    LISTEN
+tcp4       0      0  *.22                   *.*                    LISTEN
+tcp6       0      0  *.22                   *.*                    LISTEN
+
+### POST-SERVICE SNAPSHOT
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp4       0      0  192.168.178.47.60815   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60802   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60801   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.60800   151.101.48.133.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.58142   192.30.253.125.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64658   192.241.190.55.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64522   173.194.78.188.443     ESTABLISHED
+tcp4       0      0  192.168.178.47.64502   17.249.60.27.5223      ESTABLISHED
+tcp4       0      0  127.0.0.1.4371         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4381         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4370         *.*                    LISTEN
+tcp4       0      0  *.5555                 *.*                    LISTEN
+tcp4       0      0  *.22                   *.*                    LISTEN
+tcp6       0      0  *.22                   *.*                    LISTEN
+
