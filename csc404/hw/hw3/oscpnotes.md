@@ -1,6 +1,4 @@
-Brandon Randle
-2016 November 1
-HW3 - OSCP: Prelim
+### Brandon Randle | 2016 November 1 | HW3 - OSCP: Prelim
 
 ## Part 1
 * Preparing for 30 days of labs and the final cert examination.
