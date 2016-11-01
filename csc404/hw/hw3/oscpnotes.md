@@ -89,3 +89,77 @@ plugins, etc. Then he'll dive into the materials provided, the video course
 and the book, before starting to attack the lab machines.
 
 # Part 5
+* Day 1 of materials and lab access
+* Spent 4.5 hours in study: 1hr 52 min on videos, the rest on the written
+materials and working exercises. 
+* Managed to get through 33% of the written materials.
+* Been using VLC to directly view materials instead of their web interface.
+  * VLC allows him to set playback speed (he uses 1.33) for 33% overdrive so
+it's faster than standard delivery speed.
+* Even with the speed up, he spends a lot of time with the videos paused, 
+meaning he's doing a lot of hands-on work with the exercises in the middle of
+the videos. 
+* The material starts out pretty basic and moves up to more difficult things
+quickly.
+* When asked to cut down a tree, spend the majority of your time sharpening
+the axe.
+* Managed to find one of the quite difficult machines (Sufference) 
+* Spent a lot of time on lab recon
+* Learned intel that has helped him in the real world
+* JW's a bit overwhelmed by how much information is being presented
+* Decided to go with Keepnote for work-in-progress things and then document the
+information officially in a report once done with the machine
+
+# Part 6
+* Days 2 and 3
+* Spent 8 hours of study, progressing 1hr40m in video material and 50 more
+pages of the book. Spent a lot of time running scans.
+* Continuing to use KeepNote for raw report data, and using excel for recon 
+data. 
+* The first reverse shell was guided step-by-step by the materials.
+* The next exercise the materials were hands-off and made you do it yourself. 
+* JW spent a lot of time doing something then discovered a significantly
+easier way to do it. A hard lesson learned.
+* Important to read through things intentionally and think through stuff in
+order to avoid doing stupid things and wasting time.
+* Learned how to resume nmap scans if paused.
+  * This only works if you don't suspend the VM in the background.
+```bash
+nmap -oN your-results.nmap $HOST
+Ctrl-C^ here
+# then later
+nmap --resume your-results.nmap
+```
+* There's tons of versions of windows out there - know them well. 
+
+# Part 7
+* Days 4 and 5
+* Started getting some realworld exploits from offsec's exploit database 
+* you should always verify the contents of an exploit to be sure it contains
+what it's supposed to. And if you don't verify the contents, don't run it on 
+anything except a snapshotted vm. The contents could be dangerous.
+* Learned about different ways to do file transfer other than ftp and ssh.
+The course material teaches various ways to do such file transfer.
+* JW noticed that there's not much difference between the videos and the
+exercises, so he's stopped watching the videos and has focused on reading the
+pdf alone. 
+* Java applets tend to be vulnerable and insecure in general.
+* JW breezed through the chapter on web app security since he's spent a lot of
+time in the field already. 
+* JW is currently 75% through the material in the first five days.
+* JW figured out he should be running long-running nmap scans in the 
+background while he's working on other material. This will allow him to hit
+the ground running once he has the exercises complete as it will have much of
+the data collection done.
+
+# Part 8
+* Day 6
+* Succeeded today in getting his first shell on a machine and getting the
+proof.txt file that verified his access.
+* On page 300 of the material, less than 100 pages left. 
+* Next step in the material is metasploit. 
+* "Just relying on automation is not good."
+
+# Part 9
+* Days 7 and 8
+* 
