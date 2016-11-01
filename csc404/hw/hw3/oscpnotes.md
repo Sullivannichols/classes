@@ -162,4 +162,7 @@ proof.txt file that verified his access.
 
 # Part 9
 * Days 7 and 8
-* 
+* Finished the materials between days 6 and 7.
+* Was able to get into his first windows and linux boxes.
+* At the end of the materials, you're left all alone in a forest of unknown 
+machines without any idea of where to go.    
