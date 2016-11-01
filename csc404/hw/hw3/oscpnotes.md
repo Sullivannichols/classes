@@ -165,4 +165,64 @@ proof.txt file that verified his access.
 * Finished the materials between days 6 and 7.
 * Was able to get into his first windows and linux boxes.
 * At the end of the materials, you're left all alone in a forest of unknown 
-machines without any idea of where to go.    
+machines without any idea of where to go. Suddenly progress is completely
+dependent upon you and not upon the materials guiding you.
+* Gather information, enumerate, and try harder.
+* nmap is a very powerful tool - learn it well.
+* nmap with metasploit stores the info in a relational db.
+* JW reccommends checking out Metasploit Unleashed before beginning PWK.
+
+# Part 10
+* Days 9, 10, and 11
+* Successfully pivoted into a subnet.
+* Noticed that mindset is beginning to change. Moving from defender/blue
+mindset to attacker/red mindset. 
+* Whereas metasploit is limited in the exam, offsec states that the labs are
+for learning, so metasploit is OK, especially in situations where it will
+help you learn more.
+* Posted a link for a video about metasploit, very enlightening, good to watch 
+* Security misconfigurations are the biggest threat to anything. Such things
+require knowledgeable sysadmins.
+* Beta sites / demo sites shouldn't be tied to the data from the production
+site.
+* Don't assume anything. Always poke for holes in security.
+
+# Part 11
+* Days 12, 13, and 14
+* Halfway point of the course.
+* Big tip: start scanning from the first day with the tools that are taught and
+then document the results of the scans in an organized manner.
+* The paradox of choice - the more choices, the less choices you have. Watch
+the Ted talk to explore the concept further.
+* Beginning to feel that KeepNote is not doing the job for him. It's clunky
+and rigid he feels.
+ 
+# Part 12 
+* Days 15, 16, and 17
+* Everyone's different in terms of how they'll progress.
+* Again, pay lots of attention to the manual and the notes one takes, and think
+through things. This'll save lots of time and frustration.
+* Again, study and learn Metasploit Unleashed. It really helps teach what is 
+all possible and the various tools you can use.
+* Do capture-the-flag contests and work with vulnerable VMs to practice using
+the various tools and get comfortable with them. 
+* Prepare scripts to make more things automated to save time, especially in
+case of situations where shell access may be short-lived.
+* Check out ctftime.org to get into CTFs
+
+# Part 13
+* Days 18 - 21
+* "Work smart. Not hard. Try Harder just means Try More, not More Complex."
+* Oftentimes, a difficult box will not necessarily be difficult to break, it
+just has a vulnerability that one has not discovered yet. Keep enumerating.
+* "This course is boot camp." This is basicallly bootcamp for infosec.
+
+# Part 14
+* Days 22 - 25
+* Can use BITS for downloading on windows command line (kinda like wget)
+* Don't allow elation from success to cloud your judgment and focus. Act
+professionally and stick to the plan. Act slowly and with purpose.
+* Don't allow the same elation to slow down the post-exploitation process.
+Quickly get the post-exploit tasks complete.  
+
+# Part 15
