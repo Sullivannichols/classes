@@ -7,11 +7,13 @@ HW3 - OSCP: Prelim
 * First tip: For data processing on text files (such as .csv), import them
 into an SQLite database.
 
-    sqlite databasename.db
-    sqlite> .mode csv
-    sqlite> .import yourfile.csv yourtable
-    sqlite> .schema yourtable
-    sqlite> select count(*) from yourtable;
+```bash
+sqlite databasename.db
+sqlite> .mode csv
+sqlite> .import yourfile.csv yourtable
+sqlite> .schema yourtable
+sqlite> select count(*) from yourtable;
+```
 
 ## Part 2
 * In preparation for getting in the proper mindset, download and try to break
