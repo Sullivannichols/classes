@@ -12,6 +12,7 @@ frontend? Do some research for possible solutions.
 * Metasploit
   * Read through Metasploit Unleashed to both become familiar with the details
 of Metasploit and to learn more about exploitation in general.
+  * Acquire and read "Metasploit: The Penetration Tester's Guide"
 
 * Vulnerable VMs
   * Try to crack vulnerable VMs. Then Read through walkthroughs for said 
@@ -24,3 +25,9 @@ documentation efficiently.
 
 * VIM
   * Practice more with VIM to get faster and more efficient with usage.
+
+* Learning...
+  * Use learncodethehardway.org to learn various languages/protocols
+    * Specifically, check out the sections for UNIX (once released), C, and 
+Python.
+    * Working through Javascript could be helpful too.
