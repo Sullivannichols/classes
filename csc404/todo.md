@@ -18,6 +18,7 @@ of Metasploit and to learn more about exploitation in general.
   * Try to crack vulnerable VMs. Then Read through walkthroughs for said 
 vulnerable VMs to get acquianted with the tools and the mindset to compromise
 them.
+  * Set these VMs up on my home computer.
 
 * Markdown
   * Become familiar with markdown syntax and usage in order to make good
@@ -34,6 +35,7 @@ Python.
 
 * Python
   * Look into the blackhat Python book
+  * Won't help much for OSCP, but is good for professional development
 
 * Bash
   * Flesh out scripting capacity. Will use bash scripting 80% of the time for
@@ -41,3 +43,4 @@ the OSCP.
 
 * General Note
   * Try to get a meterpreter reverse shell, better than doing one's own thing
+
