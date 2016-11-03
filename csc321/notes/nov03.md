@@ -77,3 +77,28 @@ which then divies up the traffic to several web servers.
 your nameserver.
   * Nameserver is either hardcoded, DHCP automatic, or specified by an ip
 address.
+
+* DNS Hierarchy
+  * "zones"
+  * Zones are a level of the hiearchy
+  * There is a root zone, beneath with you have other subzones.
+  * The root zone is the parent zone of x child zone(s). This is the phrasing
+used to describe zones. Parents can also be children. (Very similar/almost
+identical to class relationships.)
+  * The root's child zones are the TLD (Top-Level Domains), including things
+such as .com, .net, .org, and every other TLD.
+  * The TLD child zones are Domains, such as google.com, wwf.org, wikipedia.org
+, and so forth.
+  * Every TLD has a "zone file" which is a complete collection of data about
+that zone. These "zone files" live on authoritative nameservers.  
+  * Recursive servers, as opposed to authoritative servers, look for data. They
+handle client requests and find authoritative servers.
+  * You don't run an authoritative and recursive nameserver on the same system.
+This is what Google would call "crossing the streams". They need to be on a
+different host. Back in the day, this was done with different hardware. Today
+you can use virtualization to achieve the same effect.
+
+  * Distributed Database
+
+  * Forward DNS - hostname->IP, resolves to multiple IP addresses
+  * Reverse DNS - IP->host, always resolves to one host.
