@@ -31,3 +31,13 @@ documentation efficiently.
     * Specifically, check out the sections for UNIX (once released), C, and 
 Python.
     * Working through Javascript could be helpful too.
+
+* Python
+  * Look into the blackhat Python book
+
+* Bash
+  * Flesh out scripting capacity. Will use bash scripting 80% of the time for
+the OSCP.
+
+* General Note
+  * Try to get a meterpreter reverse shell, better than doing one's own thing
