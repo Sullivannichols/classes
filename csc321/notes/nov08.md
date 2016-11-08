@@ -15,7 +15,9 @@ for, it will be used for things for which it was not intended or designed.
 
 Records
 <table>
-Record Type | Description
+<tr>
+<td>Record Type</td> | <td>Description</td>
+</tr>
  --- | ---
 A | hostname->IP, contains an IP address, the hostname returns the IP
 AAAA | Contains IPv6 address
