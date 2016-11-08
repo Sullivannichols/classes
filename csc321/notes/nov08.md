@@ -18,6 +18,7 @@ Records
 <tr>
 <td>Record Type</td> | <td>Description</td>
 </tr>
+| Description
  --- | ---
 A | hostname->IP, contains an IP address, the hostname returns the IP
 AAAA | Contains IPv6 address
