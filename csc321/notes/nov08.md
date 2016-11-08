@@ -13,29 +13,15 @@ actual domain pointed to by the nameserver.
 for, it will be used for things for which it was not intended or designed.
   * Has extra stuff stored inside.
 
-Records
-<table>
-<tr>
-<td>Record Type</td> | <td>Description</td>
-</tr>
-
-Description
- --- | ---
-A | hostname->IP, contains an IP address, the hostname returns the IP
-AAAA | Contains IPv6 address
-PTR (pointer) | Hostname ( ie, reverse DNS)
-SOA (start of authority) | Cache timing, contact info (timing & responsibility)
-CNAME (canonical name) | DNS alias (host1->host0, host2->host0)
-MX (mail exchange) | mail server info for the zone 
-</table> 
-
+# DNS Records
 | Record Type | Description |
 | ----------- | ----------- |
 | A           | IP address  | 
 | AAAA | IPv6 address |
 | PTR (pointer) | hostname (ie, reverse DNS) |
-| SOA (start of authority) | Cache timing, contact info (timing &
-responsibility) |
+| SOA (start of authority) | Cache timing, contact info (timing & responsibility) |
+| CNAME (canonical name) | DNS alias (host1->host0, host2->host0) |
+| MX (mail exchange) | mail server info for the zone |
 
 # DNS Caching
 * Recursive servers receive from authoritative server:
