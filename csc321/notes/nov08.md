@@ -18,6 +18,7 @@ Records
 <tr>
 <td>Record Type</td> | <td>Description</td>
 </tr>
+
 Description
  --- | ---
 A | hostname->IP, contains an IP address, the hostname returns the IP
@@ -27,3 +28,15 @@ SOA (start of authority) | Cache timing, contact info (timing & responsibility)
 CNAME (canonical name) | DNS alias (host1->host0, host2->host0)
 MX (mail exchange) | mail server info for the zone 
 </table> 
+
+| Record Type | Description |
+| ----------- | ----------- |
+| A           | IP address  | 
+
+# DNS Caching
+* Recursive servers receive from authoritative server:
+  * Answers
+  * Timing
+* Cache responses
+* on expiry, recursive server deletes entry
+* TAKES TIME (24 hours)
