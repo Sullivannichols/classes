@@ -15,5 +15,7 @@ for, it will be used for things for which it was not intended or designed.
 
 Records
 | Record Type | Description |
+| --- | --- |
 | A | hostname->IP, contains an IP address, the hostname returns the IP |
 | AAAA | Contains IPv6 address |
+| 
