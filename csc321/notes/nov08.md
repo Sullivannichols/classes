@@ -14,8 +14,17 @@ for, it will be used for things for which it was not intended or designed.
   * Has extra stuff stored inside.
 
 Records
-Record Type | Description
+<table>
+<tr>
+<td>Record Type</td>
+</tr>
+</table>
+ | Description
  --- | ---
 A | hostname->IP, contains an IP address, the hostname returns the IP
 AAAA | Contains IPv6 address
+PTR (pointer) | Hostname ( ie, reverse DNS)
+SOA (start of authority) | Cache timing, contact info (timing & responsibility)
+CNAME (canonical name) | DNS alias (host1->host0, host2->host0)
+MX (mail exchange) | mail server info for the zone 
  
