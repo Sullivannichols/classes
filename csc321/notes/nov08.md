@@ -30,3 +30,7 @@ for, it will be used for things for which it was not intended or designed.
 * Cache responses
 * on expiry, recursive server deletes entry
 * TAKES TIME (24 hours)
+
+# Local DNS Cache
+* Windows: system-level
+  * `ipconfig /flushdns` will flush the system dns info
