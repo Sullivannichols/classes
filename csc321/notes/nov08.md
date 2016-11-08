@@ -32,6 +32,10 @@ MX (mail exchange) | mail server info for the zone
 | Record Type | Description |
 | ----------- | ----------- |
 | A           | IP address  | 
+| AAAA | IPv6 address |
+| PTR (pointer) | hostname (ie, reverse DNS) |
+| SOA (start of authority) | Cache timing, contact info (timing &
+responsibility) |
 
 # DNS Caching
 * Recursive servers receive from authoritative server:
