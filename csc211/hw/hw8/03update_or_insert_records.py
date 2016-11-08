@@ -20,7 +20,7 @@ except sqlite3.IntegrityError:
 c.execute("INSERT OR IGNORE INTO {tn} ({idf}, {cn}) VALUES (123456, 'test')"\
     .format(tn=table_name, idf=id_column, cn=column_name))
 
-c.execute("UPDATE {tn} SET {cn}=('Hi world') WHERE {idf}=(123456)"\
+c.execute("UPDATE {tn} SET {cn}=('Hi World') WHERE {idf}=(123456)"\
     .format(tn=table_name, cn=column_name, idf=id_column))
 
 conn.commit()
