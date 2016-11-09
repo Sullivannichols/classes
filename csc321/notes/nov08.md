@@ -34,3 +34,15 @@ for, it will be used for things for which it was not intended or designed.
 # Local DNS Cache
 * Windows: system-level
   * `ipconfig /flushdns` will flush the system dns info
+* UNIX: daemon
+  * `sudo service nscd restart` to flush the local cache on unix
+* If making changes (such as to IP address for DNS server), always talk to the
+network team.
+
+# DNS Queries
+* Windows: nslookup
+  * NOERROR
+    * no errors
+    * does -not- mean correct
+    * "I don't know"
+    * wrong 
