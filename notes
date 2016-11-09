@@ -1,0 +1,23 @@
+Learn about web scraping
+Get to know the requests module in python
+Get to know Beautiful Soup (the newest version for python3) (an html parser)
+Check out Bsides jackson
+
+Open LDAP Notes
+* Download source.
+* Unpack source in destination directory using `gunzip -c openldap-VERSION.tgz
+| tar xvfB -
+* Get into destination directory with `cd openldap-VERSION`
+* Install prerequisites: cyrus and kerberos
+
+Open Directory Notes
+* Install macOS Server
+* Configure hostname
+* Enable File Sharing & create folder(s) for user home folders.
+* Enable Open Directory. Follow setup instructions.
+* Add user.
+* Set permissions on shared folder to allow new user to read/write.
+* Set user's home folder to shared folder.
+* Repeat for all users.
+* To enable clients, simply open system preferences, users and groups,
+and modify the Login Options. Select the Join button by Network Login.
