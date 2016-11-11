@@ -21,3 +21,6 @@ Open Directory Notes
 * Repeat for all users.
 * To enable clients, simply open system preferences, users and groups,
 and modify the Login Options. Select the Join button by Network Login.
+
+LAB SETUP NOTES
+* Look into docker, get the new beta installed on all macs and
