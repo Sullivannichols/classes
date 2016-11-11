@@ -6,6 +6,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # LOOK AT urllib.parse for parsing the urls from the reverse lookups
+# Add database functionality. Check if a database exists, if not, then create
+# one, run the lookups, and populate the databse. If the database already
+# exists, pull the lookup data from the database and populate the graph with
+# the information.
 
 def domains():
     ''' This function extracts domain names from a .tsv file, performs a
