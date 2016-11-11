@@ -28,16 +28,24 @@ def domains():
             for item in ips[2]:
                 noerror = True
                 try:
-                    result = socket.getfqdn(item)
+                    result = socket.gethostbyaddr(item)
+                    result = result[0]
+                    result = result.split(".")
+                    result = ".".join(len(result[-2]) < 4 and\
+                        result[-3:] or result[-2:])
+                except IndexError:
+                    print('IndexError')
+                    noerror = False
+                    continue
+                except socket.herror:
+                    print('socket.herror')
+                    noerror = False
+                    continue
                 except:
                     print('REVERSE DNS ERROR for ' + result)
                     noerror = False
                     continue
                 if noerror:
-                    # parse domain names
-                    result = result.split(".")
-                    result = ".".join(len(result[-2]) < 4 and\
-                        result[-3:] or result[-2:])
                     # add nodes
                     g.add_node(result)
                     g.add_edge(domain, result)
