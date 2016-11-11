@@ -2,18 +2,7 @@
 
 import csv
 import socket
-<<<<<<< HEAD
 import pygraphviz as pgv
-=======
-import networkx as nx
-import matplotlib.pyplot as plt
-
-# LOOK AT urllib.parse for parsing the urls from the reverse lookups
-# Add database functionality. Check if a database exists, if not, then create
-# one, run the lookups, and populate the databse. If the database already
-# exists, pull the lookup data from the database and populate the graph with
-# the information.
->>>>>>> aa7d81b4bce280210d93c4c06843372cfd53e390
 
 def domains():
     ''' This function extracts domain names from a .tsv file, performs a
