@@ -2,7 +2,7 @@ Brandon Randle
 2016 November 15
 Network Management Notes
 
-# The Role of Packet Sniffing
+## The Role of Packet Sniffing
 * Use your various tools first.
 * Once you've exhausted your tools, then go to packet sniffing.
 * Layers:
@@ -12,7 +12,7 @@ Network Management Notes
     * Layer 2: Datalink
     * Layer 1: Physical
 
-# Packet Sniffers
+## Packet Sniffers
 * tcpdump
   * cmdline
   * general purpose packet filter and analysis tool
@@ -29,13 +29,13 @@ Network Management Notes
   * Offline
   * Reads PCAP file (could get this file from tcpdump
   * Reconstructs sessions (this is its primary 'claim to fame')
-    * A session is a reconstruction of those five-tuples (sip, sport, dip,\
+    * A session is a reconstruction of those five-tuples (sip, sport, dip,
  dport, proto) that share the relationships between the items within the tuple
   * Never never NEVER EVER put on production environments
     * This is only to be used on some sort of disposable VM
     * You must treat all unvetted network traffic as radioactive and hostile
 
-# Sniffing & Security
+## Sniffing & Security
 * Packet sniffers always require elevated privileges
 * sidebar: never run something as root; only the operating system should be
  running as root
