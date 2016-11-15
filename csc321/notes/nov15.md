@@ -25,6 +25,11 @@ Network Management Notes
 * Wireshark
   * GUI tool
   * Huge, lots of dependencies
+    * lots of little tools
+    * hacky scripts
+    * spit & bailing wire
+    * clever optimizations...ie, security holes
+    * This software is swiss cheese. It was essentially made to be exploited.
   * Packet Analysis
   * Offline
   * Reads PCAP file (could get this file from tcpdump
@@ -39,3 +44,25 @@ Network Management Notes
 * Packet sniffers always require elevated privileges
 * sidebar: never run something as root; only the operating system should be
  running as root
+  * Anything running as root could leave the door open for exploitation
+* supply chain attack: attacking a library associated with a service
+* Most modern OSs will run things like tcpdump in a sandbox to keep it contained
+  * This is still not sufficient for security.
+* Wireshark ist Verboten
+
+## Interfaces
+* Layer 1 & 2
+* Packet sniffers have to "attach" to a layer 2 interface
+  * ie, eth0 on a linux box
+  * en0 (1st ethernet)
+  * lo (loopback)(an entirely logical interface)
+  * Most OSs will have at least one physical interface and will have one to two
+ logical interfaces
+  * On Windows you have 6.5 gojillion interfaces
+    * Windows has tons of logical interfaces used for various things
+  * USB interfaces
+
+## File Transfer Protocol
+* Unencrypted, unsecure
+* Telnet is also unsecure
+* SSH, SFTP are encrypted and secure
