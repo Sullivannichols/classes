@@ -53,12 +53,53 @@ destination system.
     * `vi /etc/locale/gen`
     * Uncomment entries for US English
     * `locale-gen`
-    * `echo LANG=en\_US.UTF-8 > /etc/locale.conf`
-    * `export LANG=en\_US.UTF-8`
+    * `echo LANG=en_US.UTF-8 > /etc/locale.conf`
+    * `export LANG=en_US.UTF-8`
+  * Select timezone & clock
+    * View available zones: `ls /usr/share/zoneinfo`
+    * View subzones: `ls /usr/share/zoneinfo/America`
+    * Select a zone: `ln -s /usr/share/zoneinfo/<zone>/<subzone>
+    * Set clock with `hwclock --systohc --utc`
+
+### Setup the Network
+* For wifi, install the necessary packages with pacman.
+  * `pacman -S wireless_tools wpa_supplicant wpa_actiond dialog`
+  * Now to connect to network, simply use `wifi-menu`
+
+### Configure Package Manager
+* If necessary, add repos to pacman by editing /etc/pacman.conf
+* After changing this config, reload with `pacman -Sy`
+
+### Setup Users
+* Change root password
+  * `passwd`
+* Create user account
+  * `useradd -m -g users -G wheel,storage,power -s /bin/bash <username>`
+  * `passwd <username>`
+* Install sudo
+  * `pacman -S sudo`
+  * `EDITOR=vi visudo`
+  * Uncomment `%wheel ALL=(ALL) ALL`
+
+### Install Bootloader (GRUB)
+* Install GRUB
+  * `pacman -S grub-bios`
+  * `grub-install --target=i386-pc --recheck /dev/sdX` where x = block device
+  * `grub-mkconfig -o /boot/grub/grub.cfg`
+
+### Setup Hostname
+* `echo <hostname> > /etc/hostname`
+
+### Exit LiveInstall
+* Exit chroot environment: `exit`
+* Umount the partitions
+  * `umount -R /mnt`
+* Shutdown: `shutdown now`
+* Remove boot device, boot into new system, and begin system configuration.
 
 ## Configuration
 ### Xorg Setup
 * Install required packages
-  * `sudo pacman -S xorg-server xorg-init`
+  * `sudo pacman -S xorg-server xorg-init xterm`
 * Create .xinitrc and add necessary commands
   * `exec xterm -geometry 170x46+0+0`
