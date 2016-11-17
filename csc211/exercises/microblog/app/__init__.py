@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 from flask import Flask
-from flask.ext.sqlalchemy import SQAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('config')
-db = SQAlchemy(app)
+db = SQLAlchemy(app)
 
 from app import views, models

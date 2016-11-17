@@ -99,10 +99,11 @@ destination system.
 ## Configuration
 ### Environment Setup
 * Remove unecessary packages
+  * `sudo pacman -Rs nano vi s-nail`
 * Install desired packages
-  * git
-  * vim
-  * acpi
+  * `sudo pacman -S git vim acpi python3 pip`
+* Install python libraries with pip
+  * `sudo pip3 install pyyaml`
 * Get environment settings
   * `git clone https://github.com/brandonrandle/.env ~/.env`
   * Run `~/.env/setup.sh` to setup basic settings
