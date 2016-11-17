@@ -12,14 +12,14 @@ def domains():
     g = pgv.AGraph()
     with open('domains.tsv', newline='') as tsvfile:
         tsvin = csv.DictReader(tsvfile, delimiter='\t')
-        print("domains.tsv loaded into dictionary") 
+        print("domains.tsv loaded into dictionary")
         for line in tsvin:
             # Forward Lookup
             domain = line['domain']
             g.add_node(domain)
             print("node added for " + domain)
             try:
-                ips = socket.gethostbyname_ex(domain)            
+                ips = socket.gethostbyname_ex(domain)
             except socket.gaierror:
                 print("socket.gaierror: nodename nor servname provided")
                 continue
