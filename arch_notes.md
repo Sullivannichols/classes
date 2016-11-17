@@ -1,6 +1,5 @@
 # ArchLinux Installation on Netbook
 
-* Use `sudo loadkeys ./ctrl-caps-swap.map` to fix control key
 
 ## Base Install
 ### Setup LiveInstall USB/CD
@@ -98,8 +97,23 @@ destination system.
 * Remove boot device, boot into new system, and begin system configuration.
 
 ## Configuration
+### Environment Setup
+* Remove unecessary packages
+* Install desired packages
+  * git
+  * vim
+  * acpi
+* Get environment settings
+  * `git clone https://github.com/brandonrandle/.env ~/.env`
+  * Run `~/.env/setup.sh` to setup basic settings
+  * Run `~/.env/net_setup.sh` to setup netbook specific settings
+* Fix keybindings
+  * Use `sudo loadkeys ./ctrl-caps-swap.map` to fix control key (add this to the
+ setup script)
+  * Also add to setup script the xorg keybindings
+
 ### Xorg Setup
 * Install required packages
-  * `sudo pacman -S xorg-server xorg-init xterm`
+  * `sudo pacman -S xorg-server xorg-init xterm <xif86stuff>`
 * Create .xinitrc and add necessary commands
   * `exec xterm -geometry 170x46+0+0`
